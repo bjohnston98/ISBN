@@ -43,4 +43,22 @@ class Removing_spurious_characters < MiniTest::Test
 		assert_equal('1234567890', isbn_remove_hyphens(booknum10))
 		
 	end
+
+	def test_check_for_letters_anywhere
+		booknum10 = '1234a67a90'
+		assert_equal(false, check_for_letters_anywhere(booknum10))  #we have to ane a newfunction in othe file
+
+	end
+
+	# def check_for_letters
+	# 	booknum = '123n456k7890'
+	# 	assert_equal(false, check_for_letters_anywhere(booknum10))
+	# end
+
+	def test_true_if_x_musts_be_at_end
+		booknum10 = '123456789x'
+		assert_equal(true, check_for_x(booknum10)) #call it anything but write this function!!
+	end
+
+
 end
