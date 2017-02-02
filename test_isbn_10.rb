@@ -24,7 +24,23 @@ class Isbn_function < MiniTest::Test
 	end
 
 	def method_name
+		booknum10 = '12-3-45'
 		
 	end
 end
 
+class Removing_spurious_characters < MiniTest::Test
+
+	def test_removing_spaces
+		booknum10 = '123 456 7890'
+		assert_equal('1234567890', isbn_remove_spaces(booknum10))
+		#we were creating this on the fly, test called a new method"removespaces"
+		#need code other file
+	end
+
+	def test_removing_dashes
+		booknum10 = '123-45-678-90'
+		assert_equal('1234567890', isbn_remove_hyphens(booknum10))
+		
+	end
+end
